@@ -4,20 +4,22 @@ window.onload = function() {
     const side1 = parseInt(document.querySelector("input#side1").value);
     const side2 = parseInt(document.querySelector("input#side2").value);
     const side3 = parseInt(document.querySelector("input#side3").value);
+    let triangle;
     if (side1 && side2 && side3) {
       if (side1 + side2 >= side3 && side1 + side3 >= side2 && side2 + side3 >= side1) {
         if (side1 === side2 && side2 === side3) {
-          console.log("equilateral");
+          triangle = "equlilateral";
         } else if (side1 === side2 || side2 === side3 || side1 === side3) {
-          console.log("isosceles");
+          triangle = "isosceles";
         } else {
-          console.log("scalene");
+          triangle = "scalene";
         }
       } else {
-        console.log("aint no triangle");
+          triangle = "ain't no triangle";
       }
   } else {
-    console.log("fill the fields");
+      triangle = ("fill the fields");
   }
+  document.querySelector("span#isTriangle").innerText = triangle;
 };
 }
